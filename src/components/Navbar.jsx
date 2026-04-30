@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-brand">
         {/* TODO: Change this to YOUR restaurant name */}
-        <Link to="/">[YOUR RESTAURANT NAME]</Link>
+        <Link to="/">Mason's Menu</Link>
       </div>
       <ul className="nav-links">
         <li>

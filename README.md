@@ -11,7 +11,7 @@ A React + Vite starter template for the Web Development restaurant project.
 
 ## What to Customize
 
-Look for `[YOUR RESTAURANT NAME]`, `[TODO]`, and placeholder text throughout the code.
+Look for `Mason's Menu`, `[TODO]`, and placeholder text throughout the code.
 The main files you'll edit:
 
 - `src/components/Navbar.jsx` — Your restaurant name

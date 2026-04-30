@@ -8,8 +8,8 @@ function Home() {
           TODO: Replace the name, tagline, and button text with yours.
           ============================================================ */}
       <section className="hero">
-        <h1>[YOUR RESTAURANT NAME]</h1>
-        <p className="tagline">[YOUR TAGLINE HERE]</p>
+        <h1>Mason's Menu</h1>
+        <p className="tagline">"Where Comfort Meets Craft."</p>
         <Link to="/menu" className="cta-button">
           View Our Menu
         </Link>
@@ -24,14 +24,17 @@ function Home() {
         <div className="welcome-text">
           <h2>Welcome</h2>
           <p>
-            [Write a paragraph about your restaurant here. What do you serve?
-            What makes you special? Why should someone eat here? Use your
-            planning document to guide this section.]
+            A modern upscale restaurant with a wide range of tastes and 
+            techniques from around the world. 
+            Every dish presented as not just a meal, but as a work of art.
           </p>
           <p style={{ marginTop: "1rem" }}>
-            [Write a second paragraph. Maybe talk about your history, your
-            ingredients, your philosophy, or what makes the dining experience
-            unique.]
+            Our approach centers on high-quality, thoughtfully sourced ingredients, 
+            combining fresh seafood, premium cuts of meat, and seasonal produce to 
+            build dishes that feel both familiar and elevated.
+            By blending Southern influences with global flavors, 
+            we create a dining experience that is approachable yet distinctive. Where 
+            each dish is crafted to surprise, satisfy, and leave a lasting impression.
           </p>
         </div>
         <div className="welcome-image">
