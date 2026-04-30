@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import restaurantPhoto from "../assets/IMG_0077.PNG";
 
 function Home() {
   return (
@@ -39,7 +40,11 @@ function Home() {
         </div>
         <div className="welcome-image">
           {/* TODO: Replace with an <img> tag once you add images in Week 4 */}
-          📸 Add your restaurant photo here
+          <img
+    src={restaurantPhoto}
+    alt="Restaurant interior"
+    style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+  />
         </div>
       </section>
 
@@ -51,19 +56,19 @@ function Home() {
       <section>
         <div className="features">
           <div className="feature-card">
-            <div className="feature-icon">🍽️</div>
-            <h3>[Feature 1 Title]</h3>
-            <p>[Describe what makes this feature special about your restaurant.]</p>
+            <div className="feature-icon">🍝</div>
+            <h3>Fresh, Made-to-Order Experiences</h3>
+            <p>Every dish is prepared fresh after you order, using high-quality ingredients for maximum flavor and consistency.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">⭐</div>
-            <h3>[Feature 2 Title]</h3>
-            <p>[Describe another highlight of your restaurant.]</p>
+            <div className="feature-icon">🏡</div>
+            <h3>Locally Loved in Kernersville</h3>
+            <p>A community favorite known for friendly service, generous portions, and a welcoming atmosphere that keeps guests coming back.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">❤️</div>
-            <h3>[Feature 3 Title]</h3>
-            <p>[Describe a third thing that sets you apart.]</p>
+            <div className="feature-icon">🫶</div>
+            <h3>Comfort Food with Heart</h3>
+            <p>Classic, satisfying dishes made to feel familar yet unique.</p>
           </div>
         </div>
       </section>

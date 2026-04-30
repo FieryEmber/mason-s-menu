@@ -6,38 +6,32 @@ function Contact() {
     email: "",
     message: "",
   });
+
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
 
-  // ============================================================
-  // VALIDATION FUNCTION
-  // This checks all form fields and returns any errors found.
-  // ============================================================
+  // Validate form fields
   function validate() {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
+      newErrors.name = "Please enter your name so we know who to thank!";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = "We need your email to respond to you.";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "masonalbohn77@gmail.com";
+      newErrors.email = "Please enter a valid email address.";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
+      newErrors.message = "Tell us how we can help you!";
     }
 
     return newErrors;
   }
 
-  // ============================================================
-  // HANDLE INPUT CHANGES
-  // Updates form data as the user types. Also clears errors
-  // for that field so the red message disappears.
-  // ============================================================
+  // Handle input changes
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -50,10 +44,7 @@ function Contact() {
     }
   }
 
-  // ============================================================
-  // HANDLE FORM SUBMISSION
-  // Validates first. If valid, shows success and clears form.
-  // ============================================================
+  // Handle submit
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -64,70 +55,58 @@ function Contact() {
       return;
     }
 
-    // TODO: You can customize this success message
-    setStatus("Thank you for reaching out! We'll get back to you soon.");
+    setStatus("Thanks for reaching out! We’ll get back to you soon.");
     setFormData({ name: "", email: "", message: "" });
     setErrors({});
   }
 
   return (
     <div className="page">
-      {/* ============================================================
-          TODO: Customize the heading and subtitle text below.
-          ============================================================ */}
       <div className="contact-header">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you!</p>
+        <h1>Get in Touch</h1>
+        <p>Questions, feedback, or cravings? We’re here for you.</p>
       </div>
 
       <div className="form-container">
-        {/* Success message (appears after valid submission) */}
         {status && <p className="success-msg">{status}</p>}
 
         <div className="contact-form">
-          {/* Name Field */}
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label>Name</label>
             <input
               type="text"
-              id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your full name"
+              placeholder="Your name"
             />
             {errors.name && <span className="error">{errors.name}</span>}
           </div>
 
-          {/* Email Field */}
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label>Email</label>
             <input
               type="email"
-              id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="your.email@example.com"
+              placeholder="you@example.com"
             />
             {errors.email && <span className="error">{errors.email}</span>}
           </div>
 
-          {/* Message Field */}
           <div className="form-group">
-            <label htmlFor="message">Message</label>
+            <label>Message</label>
             <textarea
-              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="How can we help you?"
+              placeholder="What can we help you with?"
               rows="5"
-            ></textarea>
+            />
             {errors.message && <span className="error">{errors.message}</span>}
           </div>
 
-          {/* Submit Button */}
           <button onClick={handleSubmit} className="submit-btn">
             Send Message
           </button>

@@ -114,7 +114,7 @@ function Menu() {
       <div className="menu-header">
         {/* TODO: Customize this heading for YOUR restaurant */}
         <h1>Our Menu</h1>
-        <p>[Add a short description of your menu here]</p>
+        <p>A selection of our favorite dishes, made with the finest ingredients.</p>
       </div>
 
       {categories.map((category) => (

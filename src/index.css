@@ -1,10 +1,9 @@
 /* ============================================
    GLOBAL STYLES — index.css
-   These apply to the entire site.
-   
-   TODO: Update the font-family if you change
-   the Google Fonts link in index.html.
+   Modern rustic restaurant theme (updated)
    ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -13,24 +12,89 @@
 }
 
 body {
-  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa; /* TODO: Change to YOUR background color */
+
+  /* Jet Black base */
+  background-color: #cde3e6;
+
+  /* Brighter warm ivory text */
+  color: #FFF3DD;
+
+  /* smoother text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings */
 h1,
 h2,
 h3 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color: #FFF3DD;
+  letter-spacing: 0.5px;
 }
 
+/* Links */
 a {
   text-decoration: none;
-  color: inherit;
+  color: #FFF3DD;
+  transition: color 0.2s ease;
 }
 
+a:hover {
+  color: #BFA289; /* warm khaki accent */
+}
+
+/* Images */
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+}
+
+/* Sections spacing */
+section {
+  padding: 60px 20px;
+}
+
+/* Buttons */
+button {
+  font-family: "Inter", sans-serif;
+  background-color: #745B2D; /* Olive Bark */
+  color: #252E2F;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #56290E; /* Dark Walnut */
+  color: #FFF3DD;
+}
+
+/* Optional: form styling base (helps your Contact page instantly look better) */
+input,
+textarea {
+  font-family: "Inter", sans-serif;
+  background-color: #3B3428; /* Taupe */
+  border: 1px solid #745B2D;
+  color: #FFF3DD;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 243, 221, 0.6);
+}
+
+/* Optional: subtle focus effect */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #BFA289;
+  box-shadow: 0 0 0 2px rgba(191, 162, 137, 0.2);
 }
