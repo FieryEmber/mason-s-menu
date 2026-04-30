@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 // ============================================================
 // WEEK 3: Uncomment these two imports AFTER setting up Firebase:
 // ============================================================
-// import { collection, getDocs } from "firebase/firestore";
-// import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 // ============================================================
 // SAMPLE MENU DATA
@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 // TODO (Week 2): You can update these items to match YOUR
 // restaurant if you want, but it's not required yet.
 // ============================================================
-const sampleMenuItems = [
+const samplemenu = [
   {
     id: "1",
     name: "Sample Item One",
@@ -60,7 +60,7 @@ const sampleMenuItems = [
 ];
 
 function Menu() {
-  const [menuItems, setMenuItems] = useState([]);
+  const [menu, setmenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -72,18 +72,14 @@ function Menu() {
         // Uncomment the block below and DELETE the sample data block
         // AFTER you set up Firebase and add your menu items.
         // ==========================================================
-        // const querySnapshot = await getDocs(collection(db, "menuItems"));
-        // const items = querySnapshot.docs.map((doc) => ({
-        //   id: doc.id,
-        //   ...doc.data(),
-        // }));
-        // setMenuItems(items);
+         const querySnapshot = await getDocs(collection(db, "menu"));
+         const items = querySnapshot.docs.map((doc) => ({
+           id: doc.id,
+           ...doc.data(),
+        }));
+        setmenu(items);
 
-        // ==========================================================
-        // SAMPLE DATA VERSION (delete this block in Week 3)
-        // ==========================================================
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        setMenuItems(sampleMenuItems);
+        
       } catch (err) {
         console.error("Error fetching menu:", err);
         setError("Failed to load menu. Please try again later.");
@@ -111,7 +107,7 @@ function Menu() {
   }
 
   // Group items by category
-  const categories = [...new Set(menuItems.map((item) => item.category))];
+  const categories = [...new Set(menu.map((item) => item.category))];
 
   return (
     <div className="page">
@@ -125,7 +121,7 @@ function Menu() {
         <div key={category} className="menu-category">
           <h2>{category}</h2>
           <div className="menu-items">
-            {menuItems
+            {menu
               .filter((item) => item.category === category)
               .map((item) => (
                 <div key={item.id} className="menu-item">
